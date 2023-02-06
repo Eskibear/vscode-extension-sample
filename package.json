@@ -3,9 +3,9 @@
 	"displayName": "Extension API Samples",
 	"publisher": "yanzh",
 	"description": "Testing Extension APIs",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
-		"vscode": "^1.61.0"
+		"vscode": "^1.75.0"
 	},
 	"repository": {
 		"url": "http://github.com/eskibear/vscode-extension-sample"
@@ -14,7 +14,10 @@
 		"Other"
 	],
 	"activationEvents": [
-        "*"
+		"*"
+	],
+	"enabledApiProposals": [
+		"treeItemCheckbox"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -34,7 +37,15 @@
 				"category": "Sample",
 				"title": "Show Target Platform"
 			}
-		]
+		],
+		"views": {
+			"explorer": [
+				{
+					"id": "myView",
+					"name": "My View"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -42,18 +53,19 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./out/test/runTest.js",
+		"vscode-dts": "npx vscode-dts dev"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.60.0",
 		"@types/glob": "^7.1.3",
 		"@types/mocha": "^8.2.2",
 		"@types/node": "14.x",
-		"eslint": "^7.27.0",
+		"@types/vscode": "1.75.0",
 		"@typescript-eslint/eslint-plugin": "^4.26.0",
 		"@typescript-eslint/parser": "^4.26.0",
+		"eslint": "^7.27.0",
 		"glob": "^7.1.7",
-		"mocha": "^8.4.0",
+		"mocha": "^10.2.0",
 		"typescript": "^4.3.2",
 		"vscode-test": "^1.5.2"
 	}
