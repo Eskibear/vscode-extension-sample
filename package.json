@@ -1,7 +1,7 @@
 {
-	"name": "sample",
-	"displayName": "Extension API Samples",
-	"publisher": "yanzh",
+	"name": "api-test",
+	"displayName": "Extension API Tests",
+	"publisher": "eskibear",
 	"description": "Testing Extension APIs",
 	"version": "0.0.3",
 	"engines": {
